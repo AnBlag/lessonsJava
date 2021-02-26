@@ -5,9 +5,12 @@ import java.util.ArrayList;
 public class arrayFilter {
     public static void main(String[] args) {
 
+        insertionSortAndArrayFilter();
+
+    }
+    public static void insertionSortAndArrayFilter () {
         int[] array = {10, 2, 10, 3, 1, 2, 5};
         ArrayList<Integer> list = new ArrayList<>();
-
         for (int i = 0; i < array.length; i++) {
 
             int min = array[i];
@@ -27,13 +30,11 @@ public class arrayFilter {
         }
         for (int i = 0; i < array.length; i++) {
             int temp = array[i];
-            if (i == 0){
+            if (i == 0) {
                 list.add(temp);
-            }
-            else if (temp == array[i-1]){
+            } else if (temp == array[i - 1]) {
 
-            }
-            else list.add(array[i]);
+            } else list.add(array[i]);
         }
         System.out.println(list);
     }
