@@ -3,6 +3,7 @@ package Lesson7.Zoo.Animals;
 import Lesson7.Zoo.AnimalsAction.AnimalEats;
 import Lesson7.Zoo.AnimalsAction.GiveSomeFoodAnimal;
 import Lesson7.Zoo.AnimalsAction.SleepAnimal;
+import Lesson7.Zoo.Exception.ToGiveSomeFoodException;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -94,9 +95,10 @@ public abstract class Animal implements AnimalEats, SleepAnimal, GiveSomeFoodAni
     }
 
     @Override
-    public void giveSomeFood() {
+    public void giveSomeFood()  {
         {
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
             if (!name.equals("Посетитель")) {
                 System.out.println("Можете покормить животное. Оно ест - " + getAnimalFood() + ".");
                 String food = null;
@@ -105,10 +107,16 @@ public abstract class Animal implements AnimalEats, SleepAnimal, GiveSomeFoodAni
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                if (food.equalsIgnoreCase(getAnimalFood())) {
-                    System.out.println("Чавк-чавк-чавк...");
-                } else System.out.println("Животное эту еду не ест!");
+                if (!food.equalsIgnoreCase(getAnimalFood())) {
+                   try {
+                       throw new ToGiveSomeFoodException("Животное эту еду не ест!");
+                   }
+                   catch (ToGiveSomeFoodException e) {
+                       e.printStackTrace();
+                   }
+                } else System.out.println("Чавк-чавк-чавк...");
             }
+
             else if (name.equals("Посетитель")) {
                 System.out.println("Можешь покормить посетителя. Он ест - " + getAnimalFood() + ".");
                 String food = null;
@@ -117,9 +125,14 @@ public abstract class Animal implements AnimalEats, SleepAnimal, GiveSomeFoodAni
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                if (food.equalsIgnoreCase("Чебурек")) {
-                    System.out.println("M-m-m! Nice! Thank's!");
-                } else System.out.println("Человеки это не едят!");
+                if (!food.equalsIgnoreCase("Чебурек")) {
+                    try {
+                        throw new ToGiveSomeFoodException("Человеки это не едят!");
+                    }
+                catch (ToGiveSomeFoodException e) {
+                        e.printStackTrace();
+                }
+                } else System.out.println("M-m-m! Nice! Thank's!");
             }
         }
     }

@@ -2,6 +2,7 @@ package Lesson7.Zoo.Animals;
 
 import Lesson7.Zoo.AnimalsAction.AnimalEats;
 import Lesson7.Zoo.AnimalsAction.SleepAnimal;
+import Lesson7.Zoo.Exception.RandomValueOutOfBound;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -22,7 +23,13 @@ public class Monkeys extends Animal implements AnimalEats, SleepAnimal {
         System.out.println("Мартышка спряталась за деревом. Сможешь её найти? Введи номер дерева 1, 2, или 3.");
         for (int i = 3; i > 0; i--) {
             int enterNum = scanner.nextInt();
-            if (a == enterNum) {
+            if (enterNum > 3 || enterNum < 1) {
+                try {
+                    throw new RandomValueOutOfBound("На было ввести значение от 1 до 3!");
+                } catch (RandomValueOutOfBound e) {
+                    e.printStackTrace();
+                }
+            } else if (a == enterNum) {
                 System.out.println("Нашел!");
                 break;
             } else System.out.println("Не нашел, поищи в другом месте.");
