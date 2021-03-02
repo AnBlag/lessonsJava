@@ -1,15 +1,21 @@
 package Lesson7.Zoo.Animals;
 
+import Lesson7.Zoo.AnimalsAction.AnimalEats;
+import Lesson7.Zoo.AnimalsAction.SleepAnimal;
+
 import java.util.Random;
 import java.util.Scanner;
 
-public class Monkeys extends AbstractAnimal{
+public class Monkeys extends Animal implements AnimalEats, SleepAnimal {
     public Monkeys(String name, Integer weight, String animalFood) {
         super(name, weight, animalFood);
     }
-    public void getVoice(){
+
+    @Override
+    public void getVoice() {
         System.out.println("У,у,а,а!");
     }
+
     public void toHide() {
         Scanner scanner = new Scanner(System.in);
         int a = new Random().nextInt(3);
