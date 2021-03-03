@@ -1,7 +1,7 @@
-package Lesson7.Zoo;
+package lesson.zoo;
 
-import Lesson7.Zoo.animals.*;
-import Lesson7.Zoo.visitors.OneOfTheZooVisitors;
+import lesson.zoo.animals.*;
+import lesson.zoo.visitors.Visitor;
 
 import java.util.Random;
 
@@ -16,11 +16,12 @@ public class ZooLife {
 
         //
 
-        OneOfTheZooVisitors visitor = new OneOfTheZooVisitors("Посетитель", 74, "Чебурек");
+        Visitor visitor = new Visitor("Посетитель", 74, "Чебурек");
         visitor.getApplause();
         visitor.visitorEats();
         visitor.sleep();
         visitor.visitorLaughs();
+        visitor.giveSomeFoodVisitor();
 
         //
 

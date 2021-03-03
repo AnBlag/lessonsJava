@@ -1,4 +1,4 @@
-package Lesson7.Zoo.animalsAction;
+package lesson.zoo.animalsAction;
 
 public interface AnimalEats {
     void eatFood();

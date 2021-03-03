@@ -1,7 +1,7 @@
-package Lesson7.Zoo.animals;
+package lesson.zoo.animals;
 
-import Lesson7.Zoo.animalsAction.AnimalEats;
-import Lesson7.Zoo.animalsAction.SleepAnimal;
+import lesson.zoo.animalsAction.AnimalEats;
+import lesson.zoo.animalsAction.SleepAnimal;
 
 public class Elephants extends Animal implements AnimalEats, SleepAnimal {
     public Elephants(String name, Integer weight, String animalFood) {

@@ -1,4 +1,4 @@
-package Lesson7.Zoo.vistorsAction;
+package lesson.zoo.vistorsAction;
 
 public interface VisitorSleep {
     void sleep();

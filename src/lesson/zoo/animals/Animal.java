@@ -1,16 +1,16 @@
-package Lesson7.Zoo.animals;
+package lesson.zoo.animals;
 
-import Lesson7.Zoo.animalsAction.AnimalEats;
-import Lesson7.Zoo.animalsAction.GiveSomeFoodAnimal;
-import Lesson7.Zoo.animalsAction.SleepAnimal;
-import Lesson7.Zoo.exception.ToGiveSomeFoodException;
+import lesson.zoo.animalsAction.AnimalEats;
+import lesson.zoo.animalsAction.GiveSomeFoodAnimal;
+import lesson.zoo.animalsAction.SleepAnimal;
+import lesson.zoo.exception.ToGiveSomeFoodException;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Objects;
 
-public abstract class Animal implements AnimalEats, SleepAnimal, GiveSomeFoodAnimal{
+public abstract class Animal implements AnimalEats, SleepAnimal, GiveSomeFoodAnimal {
     private String name;
     private Integer weight;
     private String animalFood;
@@ -70,20 +70,20 @@ public abstract class Animal implements AnimalEats, SleepAnimal, GiveSomeFoodAni
 
     @Override
     public void eatFood() {
-            System.out.println("Чявк-чявк-чявк...");
+        System.out.println("Чявк-чявк-чявк...");
     }
 
     public abstract void getVoice();
 
     @Override
     public void animalSleep() {
-            System.out.println("Зверь уснул, но он скоро проснётся!");
-            try {
-                Thread.sleep(5000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+        System.out.println("Зверь уснул, но он скоро проснётся!");
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
+    }
 
     @Override
     public void giveSomeFood() {
@@ -91,23 +91,20 @@ public abstract class Animal implements AnimalEats, SleepAnimal, GiveSomeFoodAni
             {
                 BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-                if (!name.equals("Посетитель")) {
-                    System.out.println("Можете покормить животное. Оно ест - " + getAnimalFood() + ".");
-                    String food = null;
+                System.out.println("Можете покормить животное. Оно ест - " + getAnimalFood() + ".");
+                String food = null;
+                try {
+                    food = reader.readLine();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                if (!food.equalsIgnoreCase(getAnimalFood())) {
                     try {
-                        food = reader.readLine();
-                    } catch (IOException e) {
+                        throw new ToGiveSomeFoodException("Животное эту еду не ест!");
+                    } catch (ToGiveSomeFoodException e) {
                         e.printStackTrace();
                     }
-                    if (!food.equalsIgnoreCase(getAnimalFood())) {
-                        try {
-                            throw new ToGiveSomeFoodException("Животное эту еду не ест!");
-                        }
-                        catch (ToGiveSomeFoodException e) {
-                            e.printStackTrace();
-                        }
-                    } else System.out.println("Чавк-чавк-чавк...");
-                }
+                } else System.out.println("Чавк-чавк-чавк...");
             }
         }
     }

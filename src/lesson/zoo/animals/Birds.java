@@ -1,7 +1,7 @@
-package Lesson7.Zoo.animals;
+package lesson.zoo.animals;
 
-import Lesson7.Zoo.animalsAction.AnimalEats;
-import Lesson7.Zoo.animalsAction.SleepAnimal;
+import lesson.zoo.animalsAction.AnimalEats;
+import lesson.zoo.animalsAction.SleepAnimal;
 
 public class Birds extends Animal implements AnimalEats, SleepAnimal {
     public Birds(String name, Integer weight, String animalFood) {
