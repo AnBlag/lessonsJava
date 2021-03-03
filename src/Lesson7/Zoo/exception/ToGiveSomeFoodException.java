@@ -1,4 +1,4 @@
-package Lesson7.Zoo.Exception;
+package Lesson7.Zoo.exception;
 
 public class ToGiveSomeFoodException extends IllegalArgumentException{
     public ToGiveSomeFoodException() {

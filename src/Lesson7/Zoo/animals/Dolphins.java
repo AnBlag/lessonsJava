@@ -1,7 +1,7 @@
-package Lesson7.Zoo.Animals;
+package Lesson7.Zoo.animals;
 
-import Lesson7.Zoo.AnimalsAction.AnimalEats;
-import Lesson7.Zoo.AnimalsAction.SleepAnimal;
+import Lesson7.Zoo.animalsAction.AnimalEats;
+import Lesson7.Zoo.animalsAction.SleepAnimal;
 
 import java.util.Random;
 

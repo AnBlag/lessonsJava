@@ -1,8 +1,8 @@
-package Lesson7.Zoo.Animals;
+package Lesson7.Zoo.animals;
 
-import Lesson7.Zoo.AnimalsAction.AnimalEats;
-import Lesson7.Zoo.AnimalsAction.SleepAnimal;
-import Lesson7.Zoo.Exception.RandomValueOutOfBound;
+import Lesson7.Zoo.animalsAction.AnimalEats;
+import Lesson7.Zoo.animalsAction.SleepAnimal;
+import Lesson7.Zoo.exception.RandomValueOutOfBound;
 
 import java.util.Random;
 import java.util.Scanner;
