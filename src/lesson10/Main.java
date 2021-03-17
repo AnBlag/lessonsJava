@@ -29,12 +29,12 @@ public class Main {
         Wolf wolf = new Wolf("Ночной волк", 70);
 
 
-        Cage cageFirst = new Cage();
-        Cage cageSecond = new Cage();
-        Cage cageThird = new Cage();
-        Cage cageFour = new Cage();
-        Cage cageFive = new Cage();
-        Cage cageSix = new Cage();
+        Cage cageFirst = new Cage("1ый вольер.");
+        Cage cageSecond = new Cage("2ой вольер.");
+        Cage cageThird = new Cage("3ий вольер.");
+        Cage cageFour = new Cage("4ый вольер.");
+        Cage cageFive = new Cage("5ый вольер.");
+        Cage cageSix = new Cage("6ой вольер.");
 
         CageForCages cage = new CageForCages();
         cage.addCageInCageForCages(cageFirst);
@@ -42,11 +42,13 @@ public class Main {
         cage.addCageInCageForCages(cageThird);
         cage.addCageInCageForCages(cageFour);
         cage.addCageInCageForCages(cageFive);
-        cage.whoInCageForCages();
+
 
         System.out.println();
 
         cageFirst.addAnimalInCage(bear);
+
+        cage.whoInCageForCages();
 
         cageFirst.whoInCageForAnimals();
 
@@ -55,6 +57,10 @@ public class Main {
         cageFirst.deleteAnimalInCage(bear);
 
         cageFirst.whoInCageForAnimals();
+
+        cage.removeCageInCageForCages(cageSix);
+
+        cageFirst.deleteAnimalInCage(wolf);
 
     }
 }
