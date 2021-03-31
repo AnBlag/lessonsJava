@@ -1,11 +1,13 @@
 package lesson15;
 
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
        Thread thread = new Threads();
 
-        process(thread);
+       process(thread);
+
 
 
 
