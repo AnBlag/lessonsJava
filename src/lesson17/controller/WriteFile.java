@@ -4,7 +4,6 @@ import lesson17.exception.EmptyListException;
 import lesson17.model.MyFile;
 
 import java.io.*;
-import java.nio.file.Files;
 
 
 public class WriteFile {
@@ -29,13 +28,11 @@ public class WriteFile {
         }
         else {
             try (FileOutputStream byteWriter = new FileOutputStream(myFile.getFile())) {
-                for (byte outputDatum : outputData) {
                     try {
                         byteWriter.write(outputData);
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
                     }
-                }
 
             } catch (IOException e) {
                 e.printStackTrace();

@@ -22,6 +22,5 @@ public class App {
         writerFile.writeFile();
         Console.close();
 
-
     }
 }

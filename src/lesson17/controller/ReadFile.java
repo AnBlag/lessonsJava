@@ -14,7 +14,7 @@ public class ReadFile {
 
     private byte[] data;
     {
-        data = new byte[20460];
+        data = new byte[1024];
     }
 
     public ReadFile (MyFile myFile) {
